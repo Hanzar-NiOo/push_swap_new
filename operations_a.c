@@ -22,7 +22,7 @@ void	sa(t_stack **a)
 	*a = (*a)->next;
 	tmp->next = (*a)->next;
 	(*a)->next = tmp;
-    write(1, "sa\n", 3);
+	write(1, "sa\n", 3);
 }
 
 void	pa(t_stack **a, t_stack **b)
@@ -35,7 +35,7 @@ void	pa(t_stack **a, t_stack **b)
 	*a = *b;
 	*b = (*b)->next;
 	(*a)->next = tmp;
-    write(1, "pa\n", 3);
+	write(1, "pa\n", 3);
 }
 
 void	ra(t_stack **a)
@@ -49,7 +49,7 @@ void	ra(t_stack **a)
 	(*a)->next = tmp;
 	*a = tmp->next;
 	tmp->next = NULL;
-    write(1, "ra\n", 3);
+	write(1, "ra\n", 3);
 }
 
 void	rra(t_stack **a)
@@ -73,5 +73,5 @@ void	rra(t_stack **a)
 		i--;
 	}
 	tmp->next = NULL;
-    write(1, "rra\n", 4);
+	write(1, "rra\n", 4);
 }

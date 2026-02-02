@@ -32,17 +32,17 @@ int	is_duplicated(t_stack **a)
 	return (0);
 }
 
-int is_valid_input(t_stack **a)
+int	is_valid_input(t_stack **a)
 {
 	t_stack	*tmp;
 
 	tmp = *a;
 	while (tmp && tmp->next)
 	{
-        if (tmp->num >= 2147483647)
-            return (0);
-        else if (tmp->num <= -2147483648)
-            return (0);
+		if (tmp->num >= 2147483647)
+			return (0);
+		else if (tmp->num <= -2147483648)
+			return (0);
 		tmp = tmp->next;
 	}
 	return (1);

@@ -37,7 +37,7 @@ static void	push_algorathm(t_stack **a, t_stack **b, int range, int vars[2])
 static void	push_ranges_to_b(t_stack **a, t_stack **b, int size)
 {
 	int	range;
-	static int	vars[2];
+	int	vars[2];
 
 	if (size <= 100)
 		range = 15;

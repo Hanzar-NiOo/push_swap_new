@@ -12,21 +12,21 @@
 
 #include "push_swap.h"
 
-int assign_idx(char **results, int num)
+int	assign_idx(char **results, int num)
 {
-    int    idx;
-    int    assign_idx;
-    int    cmp_num;
+	int	idx;
+	int	assign_idx;
+	int	cmp_num;
 
-    idx = 0;
-    assign_idx = 0;
-    while (results[idx])
-    {
-        cmp_num = atoi(results[idx++]);
-        if (cmp_num < num)
-            assign_idx++;
-    }
-    return (assign_idx);
+	idx = 0;
+	assign_idx = 0;
+	while (results[idx])
+	{
+		cmp_num = atoi(results[idx++]);
+		if (cmp_num < num)
+			assign_idx++;
+	}
+	return (assign_idx);
 }
 
 t_stack	*new_node(int num, char **results)
@@ -37,39 +37,39 @@ t_stack	*new_node(int num, char **results)
 	if (!node)
 		return (NULL);
 	node->num = num;
-    node->idx = assign_idx(results, num);
+	node->idx = assign_idx(results, num);
 	node->next = NULL;
 	node->prev = NULL;
 	return (node);
 }
 
-void append_node(t_stack **head, t_stack *node)
+void	append_node(t_stack **head, t_stack *node)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    if (*head == NULL)
-    {
-        *head = node;
-        return;
-    }
-    tmp = *head;
-    while (tmp->next)
-        tmp = tmp->next;
-    tmp->next = node;
-    node->prev = tmp;
+	if (*head == NULL)
+	{
+		*head = node;
+		return ;
+	}
+	tmp = *head;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = node;
+	node->prev = tmp;
 }
 
 t_stack	**get_stack(char **results)
 {
-	t_stack		**a;
-	t_stack		*node;
+	t_stack	**a;
+	t_stack	*node;
 	int		num;
 	int		idx;
 
 	a = malloc(sizeof(t_stack *));
 	if (!a)
-		return NULL;
-	*a = NULL; 
+		return (NULL);
+	*a = NULL;
 	idx = 0;
 	while (results[idx])
 	{
@@ -84,7 +84,7 @@ t_stack	**get_stack(char **results)
 int	stack_size(t_stack **a)
 {
 	t_stack	*node;
-	int	idx;
+	int		idx;
 
 	idx = 0;
 	node = *a;

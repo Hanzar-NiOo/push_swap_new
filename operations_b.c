@@ -22,7 +22,7 @@ void	sb(t_stack **b)
 	*b = (*b)->next;
 	tmp->next = (*b)->next;
 	(*b)->next = tmp;
-    write(1, "sb\n", 3);
+	write(1, "sb\n", 3);
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
@@ -35,7 +35,7 @@ void	pb(t_stack **stack_a, t_stack **stack_b)
 	*stack_b = *stack_a;
 	*stack_a = (*stack_a)->next;
 	(*stack_b)->next = tmp;
-    write(1, "pb\n", 3);
+	write(1, "pb\n", 3);
 }
 
 void	rb(t_stack **b)
@@ -49,7 +49,7 @@ void	rb(t_stack **b)
 	(*b)->next = tmp;
 	*b = tmp->next;
 	tmp->next = NULL;
-    write(1, "rb\n", 3);
+	write(1, "rb\n", 3);
 }
 
 void	rrb(t_stack **b)
@@ -73,5 +73,5 @@ void	rrb(t_stack **b)
 		i--;
 	}
 	tmp->next = NULL;
-    write(1, "rrb\n", 4);
+	write(1, "rrb\n", 4);
 }
