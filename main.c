@@ -12,16 +12,20 @@
 
 #include "push_swap.h"
 
-static char	**get_results(int argc, char **argv)
+static char	**get_results(long argc, char **argv)
 {
 	char	**results;
-	int		idx;
-	int		arg_idx;
+	long		idx;
+	long		arg_idx;
 
 	if (argc < 2)
 		error();
 	else if (argc == 2)
+	{
+		if (!argv[1])
+			error();
 		results = ft_split(argv[1], ' ');
+	}
 	else
 	{
 		idx = 0;
@@ -34,11 +38,13 @@ static char	**get_results(int argc, char **argv)
 	return (results);
 }
 
-static int	check_results(char **results)
+static long	check_results(char **results)
 {
-	int	idx;
-	int	char_idx;
+	long	idx;
+	long	char_idx;
 
+	// if (!check_argv(results))
+	// 	return (0);
 	idx = 0;
 	while (results[idx])
 	{
@@ -47,7 +53,7 @@ static int	check_results(char **results)
 		{
 			if (char_idx == 0 && ((results[idx][char_idx] == '+')
 				|| (results[idx][char_idx] == '-'))
-				&& results[idx][char_idx + 1])
+				&& !results[idx][char_idx + 1])
 				char_idx++;
 			else if ((results[idx][char_idx] >= 48)
 				&& (results[idx][char_idx] <= 57))
@@ -66,6 +72,8 @@ int	main(int argc, char **argv)
 	t_stack	**a;
 	t_stack	**b;
 
+	// check_invalid_num(argv);
+	// check_argv(argv);
 	results = get_results(argc, argv);
 	if (!check_results(results))
 		error();
@@ -74,10 +82,7 @@ int	main(int argc, char **argv)
 		error();
 	b = NULL;
 	if (is_duplicated(a) || !is_valid_input(a))
-	{
-		printf("Input error!\n");
 		error();
-	}
 	if (!is_sorted(a))
 	{
 		if (stack_size(a) <= 5)

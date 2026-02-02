@@ -1,8 +1,5 @@
 NAME = push_swap
 
-# SRCS = main.c error.c get_stack.c check_stack.c operations_a.c operations_b.c operations_ab.c\
-# 		algorathms.c find_num.c
-
 SRCS = main.c error.c get_stack.c check_stack.c operations_a.c operations_b.c operations_ab.c\
 		lst_utils.c find_num.c small_sort.c butterfly_algorathm.c
 

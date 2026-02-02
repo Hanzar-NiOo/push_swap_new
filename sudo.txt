@@ -1,0 +1,5 @@
+if (!argv) <=	
+Argvs must be long; 0 >= AND <= 9 <=
+if (ft_strchr(argv[idx]), '+' || '-')
+	if (!argv[idx][char_idx]) <=
+	if (argv[idx][char_idx] == '+' || '-' && char_idx != 0) <=

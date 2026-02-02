@@ -14,9 +14,9 @@
 
 void	sort_three(t_stack **a)
 {
-	int	first;
-	int	second;
-	int	third;
+	long	first;
+	long	second;
+	long	third;
 
 	first = (*a)->num;
 	second = (*a)->next->num;
@@ -39,10 +39,10 @@ void	sort_three(t_stack **a)
 		rra(a);
 }
 
-static void	min_move_top(t_stack **a, int size)
+static void	min_move_top(t_stack **a, long size)
 {
-	int	min;
-	int	pos;
+	long	min;
+	long	pos;
 
 	min = min_num(a);
 	pos = find_pos(a, min);

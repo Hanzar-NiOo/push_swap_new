@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	is_duplicated(t_stack **a)
+long	is_duplicated(t_stack **a)
 {
 	t_stack	*i;
 	t_stack	*j;
@@ -32,7 +32,21 @@ int	is_duplicated(t_stack **a)
 	return (0);
 }
 
-int	is_valid_input(t_stack **a)
+long	is_sorted(t_stack **a)
+{
+	t_stack	*tmp;
+
+	tmp = *a;
+	while (tmp && tmp->next)
+	{
+		if (tmp->num > tmp->next->num)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
+}
+
+long	is_valid_input(t_stack **a)
 {
 	t_stack	*tmp;
 
@@ -42,20 +56,6 @@ int	is_valid_input(t_stack **a)
 		if (tmp->num >= 2147483647)
 			return (0);
 		else if (tmp->num <= -2147483648)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
-}
-
-int	is_sorted(t_stack **a)
-{
-	t_stack	*tmp;
-
-	tmp = *a;
-	while (tmp && tmp->next)
-	{
-		if (tmp->num > tmp->next->num)
 			return (0);
 		tmp = tmp->next;
 	}

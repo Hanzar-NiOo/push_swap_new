@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-int	min_num(t_stack **stack)
+long	min_num(t_stack **stack)
 {
 	t_stack	*tmp;
-	int		min_num;
+	long		min_num;
 
 	tmp = *stack;
 	min_num = tmp->num;
@@ -28,10 +28,10 @@ int	min_num(t_stack **stack)
 	return (min_num);
 }
 
-int	find_pos(t_stack **a, int value)
+long	find_pos(t_stack **a, long value)
 {
 	t_stack	*tmp;
-	int		i;
+	long		i;
 
 	tmp = *a;
 	i = 0;
@@ -45,11 +45,11 @@ int	find_pos(t_stack **a, int value)
 	return (-1);
 }
 
-int	get_max_pos(t_stack *stack)
+long	get_max_pos(t_stack *stack)
 {
-	int	max_idx;
-	int	pos;
-	int	max_pos;
+	long	max_idx;
+	long	pos;
+	long	max_pos;
 
 	max_idx = stack->idx;
 	pos = 0;

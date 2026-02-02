@@ -55,7 +55,7 @@ void	rb(t_stack **b)
 void	rrb(t_stack **b)
 {
 	t_stack	*tmp;
-	int		i;
+	long		i;
 
 	if (!*b || stack_size(b) == 1)
 		return ;

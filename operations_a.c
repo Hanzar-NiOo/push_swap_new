@@ -55,7 +55,7 @@ void	ra(t_stack **a)
 void	rra(t_stack **a)
 {
 	t_stack	*tmp;
-	int		i;
+	long		i;
 
 	if (!*a || stack_size(a) == 1)
 		return ;

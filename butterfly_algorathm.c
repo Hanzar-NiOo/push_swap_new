@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-static void	push_algorathm(t_stack **a, t_stack **b, int range, int vars[2])
+static void	push_algorathm(t_stack **a, t_stack **b, long range, long vars[2])
 {
-	int	idx;
+	long	idx;
 
 	idx = (*a)->idx;
 	if (idx <= vars[TARGET_NUM])
@@ -34,10 +34,10 @@ static void	push_algorathm(t_stack **a, t_stack **b, int range, int vars[2])
 		ra(a);
 }
 
-static void	push_ranges_to_b(t_stack **a, t_stack **b, int size)
+static void	push_ranges_to_b(t_stack **a, t_stack **b, long size)
 {
-	int	range;
-	int	vars[2];
+	long	range;
+	long	vars[2];
 
 	if (size <= 100)
 		range = 15;
@@ -49,9 +49,9 @@ static void	push_ranges_to_b(t_stack **a, t_stack **b, int size)
 		push_algorathm(a, b, range, vars);
 }
 
-static void	push_back_to_a(t_stack **a, t_stack **b, int size)
+static void	push_back_to_a(t_stack **a, t_stack **b, long size)
 {
-	int	max_pos;
+	long	max_pos;
 
 	while (*b)
 	{
@@ -74,7 +74,7 @@ static void	push_back_to_a(t_stack **a, t_stack **b, int size)
 
 void	butterfly_sort(t_stack **a, t_stack **b)
 {
-	int	size;
+	long	size;
 
 	b = malloc(sizeof (t_stack));
 	if (!b)

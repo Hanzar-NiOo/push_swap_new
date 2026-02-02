@@ -51,7 +51,7 @@ void	rr(t_stack **a, t_stack **b)
 static void	rrr_sub(t_stack **b)
 {
 	t_stack	*tmp;
-	int		i;
+	long		i;
 
 	i = 0;
 	tmp = *b;
@@ -73,7 +73,7 @@ static void	rrr_sub(t_stack **b)
 void	rrr(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
-	int		i;
+	long		i;
 
 	if (!*a || stack_size(a) == 1 || !*b || stack_size(b) == 1)
 		return ;
