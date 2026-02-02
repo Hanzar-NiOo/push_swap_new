@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-long assign_idx(char **results, long num)
+int assign_idx(char **results, int num)
 {
-    long    idx;
-    long    assign_idx;
-    long    cmp_num;
+    int    idx;
+    int    assign_idx;
+    int    cmp_num;
 
     idx = 0;
     assign_idx = 0;
@@ -29,7 +29,7 @@ long assign_idx(char **results, long num)
     return (assign_idx);
 }
 
-t_stack	*new_node(long num, char **results)
+t_stack	*new_node(int num, char **results)
 {
 	t_stack	*node;
 
@@ -63,8 +63,8 @@ t_stack	**get_stack(char **results)
 {
 	t_stack		**a;
 	t_stack		*node;
-	long		num;
-	long		idx;
+	int		num;
+	int		idx;
 
 	a = malloc(sizeof(t_stack *));
 	if (!a)
@@ -81,10 +81,10 @@ t_stack	**get_stack(char **results)
 	return (a);
 }
 
-long	stack_size(t_stack **a)
+int	stack_size(t_stack **a)
 {
 	t_stack	*node;
-	long	idx;
+	int	idx;
 
 	idx = 0;
 	node = *a;

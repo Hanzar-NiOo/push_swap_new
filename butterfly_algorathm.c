@@ -14,7 +14,7 @@
 
 static void	push_algorathm(t_stack **a, t_stack **b, int range, int vars[2])
 {
-	long	idx;
+	int	idx;
 
 	idx = (*a)->idx;
 	if (idx <= vars[TARGET_NUM])
@@ -34,7 +34,7 @@ static void	push_algorathm(t_stack **a, t_stack **b, int range, int vars[2])
 		ra(a);
 }
 
-static void	push_ranges_to_b(t_stack **a, t_stack **b, long size)
+static void	push_ranges_to_b(t_stack **a, t_stack **b, int size)
 {
 	int	range;
 	static int	vars[2];
@@ -49,9 +49,9 @@ static void	push_ranges_to_b(t_stack **a, t_stack **b, long size)
 		push_algorathm(a, b, range, vars);
 }
 
-static void	push_back_to_a(t_stack **a, t_stack **b, long size)
+static void	push_back_to_a(t_stack **a, t_stack **b, int size)
 {
-	long	max_pos;
+	int	max_pos;
 
 	while (*b)
 	{
@@ -74,7 +74,7 @@ static void	push_back_to_a(t_stack **a, t_stack **b, long size)
 
 void	butterfly_sort(t_stack **a, t_stack **b)
 {
-	long	size;
+	int	size;
 
 	b = malloc(sizeof (t_stack));
 	if (!b)

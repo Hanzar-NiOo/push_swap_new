@@ -36,8 +36,8 @@ static char    **get_results(int argc, char **argv)
 
 static int  check_results(char **results)
 {
-    long    idx;
-    long    char_idx;
+    int    idx;
+    int    char_idx;
 
     idx = 0;
     while (results[idx])

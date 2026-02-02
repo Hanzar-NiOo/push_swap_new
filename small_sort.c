@@ -39,7 +39,7 @@ void    sort_three(t_stack **a)
 		rra(a);
 }
 
-static void min_move_top(t_stack **a, long size)
+static void min_move_top(t_stack **a, int size)
 {
     int	    min;
 	int	    pos;
