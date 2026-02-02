@@ -45,9 +45,10 @@ static int  check_results(char **results)
         char_idx = 0;
         while (results[idx][char_idx])
         {
-            if (char_idx == 0 && ((results[idx][char_idx] == '+') || (results[idx][char_idx] == '-')))
+            if (char_idx == 0 && ((results[idx][char_idx] == '+') || (results[idx][char_idx] == '-')) 
+				&& !results[idx][char_idx + 1])
                 char_idx++;
-            else if ((results[idx][char_idx] >= 48) && (results[idx][char_idx] <= 57))
+			else if ((results[idx][char_idx] >= 48) && (results[idx][char_idx] <= 57))
                 char_idx++;
             else
                 return (0);
