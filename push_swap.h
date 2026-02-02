@@ -46,7 +46,4 @@ void    small_sort(t_stack **a);
 long    get_max_pos(t_stack *stack);
 void	butterfly_sort(t_stack **a, t_stack **b);
 
-// Test
-void    print_idx(t_stack **stack);
-
 #endif

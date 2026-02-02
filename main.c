@@ -57,23 +57,6 @@ static int  check_results(char **results)
     return (1);
 }
 
-void    print_idx(t_stack **stack)
-{
-    t_stack *top;
-    t_stack *tmp;
-
-    top = *stack;
-    tmp = *stack;
-    printf("Index -> [ ");
-    while (tmp)
-    {
-        printf("%li ", tmp->idx);
-        tmp = tmp->next;
-    }
-    printf ("]\n");
-    *stack = top;
-}
-
 int main(int argc,char **argv)
 {
     char    **results;
@@ -84,6 +67,8 @@ int main(int argc,char **argv)
     if (!check_results(results))
         error();
     a = get_stack(results);
+	if (!a)
+		error();
 	b = NULL;
     if (is_duplicated(a) || !is_valid_input(a))
     {
@@ -97,6 +82,5 @@ int main(int argc,char **argv)
         else
             butterfly_sort(a, b);
     }
-    print_idx (a);
     return (0);
 }

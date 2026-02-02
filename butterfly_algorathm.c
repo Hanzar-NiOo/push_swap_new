@@ -77,8 +77,8 @@ void	butterfly_sort(t_stack **a, t_stack **b)
 	long	size;
 
 	b = malloc(sizeof (t_stack));
-	// if (!b)
-	// 	return (NULL);
+	if (!b)
+		error();
 	size = stack_size(a);
 	push_ranges_to_b(a, b, size);
 	push_back_to_a(a, b, size);
