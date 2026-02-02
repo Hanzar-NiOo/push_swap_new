@@ -1,0 +1,14 @@
+libft
+tester
+*.o
+push_swap
+push_swap_tester
+Push-Swap-Tester
+Note.txt
+README.md
+README_ES.md
+push_swap_test.sh
+push_swap_test_linux.sh
+pro_checker
+checker_Mac
+checker_linux
